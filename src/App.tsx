@@ -12,7 +12,7 @@ declare global {
   }
 }
 
-const worker = new Worker(new URL('./Workers/converter.worker.ts', import.meta.url));
+const worker = new Worker(new URL('./Workers/converter.worker.ts', import.meta.url), {type: "module"});
 
 function App() {
   const [progress, setProgress] = useState(0);
